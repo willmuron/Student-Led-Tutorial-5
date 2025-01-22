@@ -1,5 +1,5 @@
 # Student-Led-Tutorial-5
-# Task: Phylogenetic Tree Construction Using RAxML with Virus Genome Alignments
+# Task: Phylogenetic Tree Construction Using RAxML
 # Date: March 27th
 
 ## **Objective**
