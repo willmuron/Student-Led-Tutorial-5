@@ -25,6 +25,27 @@ Students will:
    - [FigTree Download](http://tree.bio.ed.ac.uk/software/figtree/)
 
 ---
+## Install MAFFT
+```
+module load gcc
+module load make
+```
+```
+mkdir -p $HOME/software/mafft
+cd $HOME/software/mafft
+```
+```
+wget https://mafft.cbrc.jp/alignment/software/mafft-7.520-with-extensions-src.tgz
+tar -zxvf mafft-7.520-with-extensions-src.tgz
+cd mafft-7.520-with-extensions/core
+```
+```
+make
+```
+```
+export PATH=$HOME/software/mafft/mafft-7.520-with-extensions/core:$PATH
+source ~/.bashrc
+```
 
 ## **Dataset Description**
 ### Dataset: Virus Genome Sequences (Just an example, you can also use bacterial genomes, mitochondrial or chloroplast genomes as well)
