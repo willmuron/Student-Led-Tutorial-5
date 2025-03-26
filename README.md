@@ -55,12 +55,12 @@ make clean
 make
 make install
 ```
+- replace `your-username`
 
 ```
 echo 'export PATH=/jet/home/your-username/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
-- replace `your-username`
 - test by typing:
 ```
 mafft --version
