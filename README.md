@@ -35,10 +35,10 @@ wget https://mafft.cbrc.jp/alignment/software/mafft-7.490-with-extensions-src.tg
 tar -zxvf mafft-7.490-with-extensions-src.tgz
 cd mafft-7.490-with-extensions/core
 ```
+- replace `your-username` in the next code lines:
 ```
 mkdir -p /jet/home/your-username/bin
 ```
-- replace `your-username`
 
 #### Open the vi editor to edit the Makefile
 ```
