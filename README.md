@@ -45,11 +45,8 @@ mafft --version
 ### Dataset: Virus Genome Sequences (Just an example, you can also use bacterial genomes, mitochondrial or chloroplast genomes as well)
 We will use publicly available genome sequences of **respiratory viruses** or mitochondrial genomes as an example.  
 - **Download Source**: NCBI Virus Database ([https://www.ncbi.nlm.nih.gov/labs/virus/](https://www.ncbi.nlm.nih.gov/labs/virus/)).
-- Example genomes:
+- For these tutorial we will focus on the:
   - Influenza virus.
-  - Respiratory syncytial virus (RSV).
-  - SARS-CoV-2.
-  - Other respiratory viruses of your choice.
 - Format: FASTA.
 
 ---
