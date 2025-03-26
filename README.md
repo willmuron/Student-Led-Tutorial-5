@@ -27,44 +27,20 @@ Students will:
 ---
 ## Install MAFFT
 ```
-module load gcc
-mkdir -p $HOME/software/mafft && cd $HOME/software/mafft
+module load anaconda3
 ```
 ```
-wget https://mafft.cbrc.jp/alignment/software/mafft-7.490-with-extensions-src.tgz
-tar -zxvf mafft-7.490-with-extensions-src.tgz
-cd mafft-7.490-with-extensions/core
+conda create -n mafft-env -c bioconda mafft
 ```
-- replace `your-username` in the next code lines:
 ```
-mkdir -p /jet/home/your-username/bin
-```
-
-#### Open the vi editor to edit the Makefile
-```
-vi Makefile
-```
-- Modify lines 1 and 3 as follows, note that `your-username` must be replaced:
-  - Line 1:
-    -Change `PREFIX = /usr/local` To `PREFIX = /jet/home/your-username/software/mafft`
-  - Line 3:
-    -Change `BINDIR = $(PREFIX)/bin` to `BINDIR = /jet/home/your-username/bin`
-
-```
-make clean
-make
-make install
-```
-- replace `your-username`
-
-```
-echo 'export PATH=/jet/home/your-username/bin:$PATH' >> ~/.bashrc
-source ~/.bashrc
+conda activate mafft-env
 ```
 - test by typing:
 ```
 mafft --version
 ```
+- Output should be `v7.505 (2022/Apr/10)`
+
 ## **Dataset Description**
 ### Dataset: Virus Genome Sequences (Just an example, you can also use bacterial genomes, mitochondrial or chloroplast genomes as well)
 We will use publicly available genome sequences of **respiratory viruses** or mitochondrial genomes as an example.  
