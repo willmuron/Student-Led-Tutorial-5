@@ -28,25 +28,43 @@ Students will:
 ## Install MAFFT
 ```
 module load gcc
-module load make
+mkdir -p $HOME/software/mafft && cd $HOME/software/mafft
 ```
 ```
-mkdir -p $HOME/software/mafft
-cd $HOME/software/mafft
+wget https://mafft.cbrc.jp/alignment/software/mafft-7.490-with-extensions-src.tgz
+tar -zxvf mafft-7.490-with-extensions-src.tgz
+cd mafft-7.490-with-extensions/core
 ```
 ```
-wget https://mafft.cbrc.jp/alignment/software/mafft-7.520-with-extensions-src.tgz
-tar -zxvf mafft-7.520-with-extensions-src.tgz
-cd mafft-7.520-with-extensions/core
+mkdir -p /jet/home/your-username/bin
 ```
+- replace `your-username`
+
+#### Open the vi editor to edit the Makefile
 ```
+vi Makefile
+```
+- Modify lines 1 and 3 as follows, note that `your-username` must be replaced:
+  - Line 1:
+    -Change `PREFIX = /usr/local` To `PREFIX = /jet/home/your-username/software/mafft`
+  - Line 3:
+    -Change `BINDIR = $(PREFIX)/bin` to `BINDIR = /jet/home/your-username/bin`
+
+```
+make clean
 make
-```
-```
-export PATH=$HOME/software/mafft/mafft-7.520-with-extensions/core:$PATH
-source ~/.bashrc
+make install
 ```
 
+```
+echo 'export PATH=/jet/home/your-username/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+- replace `your-username`
+- test by typing:
+```
+mafft --version
+```
 ## **Dataset Description**
 ### Dataset: Virus Genome Sequences (Just an example, you can also use bacterial genomes, mitochondrial or chloroplast genomes as well)
 We will use publicly available genome sequences of **respiratory viruses** or mitochondrial genomes as an example.  
