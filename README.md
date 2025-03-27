@@ -64,6 +64,8 @@ We will use publicly available genome sequences of **respiratory viruses** or mi
 - `reorder`: Reorders sequences for efficient alignment.
 
 ### **Part 2a: Prepare Partitioned Alignments**
+# Install and run partition finder
+
 1. Define genome regions for partitioned analysis (e.g., coding regions, non-coding regions, or individual genes). This information is available from genbank
 2. Create a partition file (partitions.txt) specifying regions:
    ```text
