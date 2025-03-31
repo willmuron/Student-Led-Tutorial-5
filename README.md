@@ -99,14 +99,25 @@ less aligned_genomes.fasta
 ```
 module load RAxML/8.2.9
 ```
+- Ask for resources
+```
+salloc --ntasks=1 --cpus-per-task=5 --mem=10G --time=02:00:00 --job-name=interactive_raxml
+```
 - Run RAxML:
 ```
 raxmlHPC -T 4 -s aligned_genomes.fasta \
-   -n tree -m GTRGAMMA \
-   -p 12345 -x 67890 -# 100; \
-
-
-raxmlHPC -f b -t RAxML_bestTree.tree -z RAxML_bootstrap.tree -m GTRGAMMA -n tree_with_support
+   -n tree \
+   -m GTRGAMMA \
+   -p 12345 \
+   -x 67890 \
+   -# 100
+```
+- Summarize trees and obtain best tree with support values at each node.
+raxmlHPC -f b \
+   -t RAxML_bestTree.tree \
+   -z RAxML_bootstrap.tree \
+   -m GTRGAMMA \
+   -n tree_with_support
 
 raxmlHPC -T 4 \
   -s aligned_genomes.fasta \
