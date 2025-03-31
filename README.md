@@ -66,10 +66,10 @@ We will use publicly available genome sequences of **respiratory viruses** or mi
 - `reorder`: Reorders sequences for efficient alignment.
 
 ### **Part 2a: Prepare Partitioned Alignments (Use this when you have multiple genes but not the full genome)**
-# Install and run partition finder
+- Install and run partition finder
 
-#1. Define genome regions for partitioned analysis (e.g., coding regions, non-coding regions, or individual genes). This information is available from genbank
-# 2. Create a partition file (partitions.txt) specifying regions:
+- 1. Define genome regions for partitioned analysis (e.g., coding regions, non-coding regions, or individual genes). This information is available from genbank
+- 2. Create a partition file (partitions.txt) specifying regions:
    ``` text
    # Example partitions file for RAxML. These numbers are just examples and must be replaced by the coordinates in your chosen virus species.
    DNA, region1 = 1-3000
