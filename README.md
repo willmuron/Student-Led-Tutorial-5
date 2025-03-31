@@ -58,13 +58,26 @@ We will use publicly available genome sequences of **respiratory viruses** or mi
    myocean
    mkdir -p raxml_tutorial && cd raxml_tutorial
 2. Place the downloaded viral genome FASTA files in the directory.
-  - Fork repository and clone it.
+  - Fork repository and clone the repository.
+  - cd into the newly cloned repository, if you gave your forked repo a new name, the command line below must reflect that change.
+
+```
+cd Student-Led-Tutorial-5
+```
+
 4. Perform multiple sequence alignment using MAFFT:
    ```bash
-   mafft --auto --reorder virus_genomes.fasta > aligned_genomes.fasta
+   mafft --auto --reorder influenzagenomes_human.fasta > aligned_genomes.fasta
 - `auto`: Automatically selects the appropriate alignment strategy.
-- `reorder`: Reorders sequences for efficient alignment.
+- `reorder`: Reorders slsequences for efficient alignment.
 
+5. Explore the alignment and discuss any differences with your partner:
+```
+less aligned_genomes.fasta
+```
+6. Exit the alignment view by typing `q`
+---
+# OPTIONAL
 ### **Part 2a: Prepare Partitioned Alignments (Use this when you have multiple genes but not the full genome)**
 - Install and run partition finder
 
@@ -75,41 +88,71 @@ We will use publicly available genome sequences of **respiratory viruses** or mi
    DNA, region1 = 1-3000
    DNA, region2 = 3001-6000
    DNA, region3 = 6001-9000
-```
+
 ### **Part 2b: Prepare Concatenated Alignment (Use this for full-lenght genomes)**
 1. Concatenated Alignment: Use the full alignment (aligned_genomes.fasta) for the concatenated tree.
+---
 
 ### **Part 3: Build Phylogenetic Trees**
-1. Partitioned Tree:
-- Run RAxML-NG for partitioned analysis:
-   ```bash
-   raxml-ng --all --msa aligned_genomes.fasta --model GTR+G --partition partitions.txt \
-         --prefix partitioned_tree --threads 4
-  ```
--`model GTR+G`: General Time Reversible model with Gamma distribution.
--`partition partitions.txt`: Specifies the partitions file.
--`all`: Automates tree searches and bootstrap replicates.
--`prefix`: Output file prefix.
+1. Concatenated Tree:
+- Load RAxML
+```
+module load RAxML/8.2.9
+```
+- Run RAxML:
+```
+raxmlHPC -T 4 -s aligned_genomes.fasta \
+   -n tree -m GTRGAMMA \
+   -p 12345 -x 67890 -# 100; \
 
-2. Concatenated Tree:
-- Run RAxML-NG without partitions:
-   ```bash
-   raxml-ng --all --msa aligned_genomes.fasta --model GTR+G \
-         --prefix concatenated_tree --threads 4
+
+raxmlHPC -f b -t RAxML_bestTree.tree -z RAxML_bootstrap.tree -m GTRGAMMA -n tree_with_support
+
+raxmlHPC -T 4 \
+  -s aligned_genomes.fasta \
+  -n concatenated_tree \
+  -m GTRGAMMA \
+  -p 12345
+```
+- `model GTR+G`: General Time Reversible model with Gamma distribution.
+- `all`: Automates tree searches and bootstrap replicates.
+- `prefix`: Output file prefix.
 
 ### **Part 4: Visualize and Edit Tree Aesthetics**
-1. Open the resulting .newick tree files in FigTree:
-   - Example file: partitioned_tree.raxml.bestTree.
-2. Customize tree aesthetics:
+1. Add, commit and push newly generated tree.
+2. Open the resulting .newick tree files in FigTree:
+   - Example file: covid_concatenated_tree.raxml.bestTree.
+3. Customize tree aesthetics:
    - Root the tree: Select an outgroup or midpoint root.
    - Adjust branch colors and widths.
    - Annotate bootstrap values.
-3. Export the edited tree as a publication-ready image:
+4. Export the edited tree as a publication-ready image:
    - File → Export PDF/PNG.
 
 ### **Part 5: Interpret Phylogenetic Trees**
-1. Compare partitioned and concatenated trees:
-   - Are there differences in topology?
-   - Do bootstrap values differ significantly between trees?
-2. Identify clades and their evolutionary relationships.
-3. Discuss the potential influence of partitioning on the results.
+1. Clade Structure & Evolutionary Relationships
+- What clades are strongly supported? Check for bootstrap values > 70%
+- Do clades reflect known virus lineages, strain types, or outbreak clusters?
+
+Are the relationships expected based on known metadata?
+(E.g., geography, host species, sampling time?)
+
+2. Tree Shape & Imbalance
+Does the tree show long branches leading to some samples?
+→ May indicate faster evolution or more mutations.
+
+Are some clades tight and shallow?
+→ Possibly recent common ancestry or slower divergence.
+
+3. Support Values
+Highlight which branches have low bootstrap support.
+→ Discuss what this uncertainty might mean (e.g., not enough divergence, alignment issues, recombination).
+
+4. Biological Hypotheses
+What could explain the grouping of certain sequences?
+
+Shared host?
+
+Geographic region?
+
+Temporal sampling?
