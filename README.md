@@ -25,7 +25,7 @@ Students will:
    - [FigTree Download](http://tree.bio.ed.ac.uk/software/figtree/)
 
 ---
-## Install MAFFT
+## Install MAFFT (Be patient here, if you accidentally type the commands twice, we end up with all sorts of problems)
 ```
 module load anaconda3
 ```
@@ -55,9 +55,11 @@ We will use publicly available genome sequences of **respiratory viruses** or mi
 ### **Part 1: Multiple Sequence Alignment**
 1. Create a directory for the analysis:
    ```bash
+   myocean
    mkdir -p raxml_tutorial && cd raxml_tutorial
 2. Place the downloaded viral genome FASTA files in the directory.
-3. Perform multiple sequence alignment using MAFFT:
+  - Fork repository and clone it.
+4. Perform multiple sequence alignment using MAFFT:
    ```bash
    mafft --auto --reorder virus_genomes.fasta > aligned_genomes.fasta
 - `auto`: Automatically selects the appropriate alignment strategy.
