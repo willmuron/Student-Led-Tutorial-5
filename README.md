@@ -63,17 +63,18 @@ We will use publicly available genome sequences of **respiratory viruses** or mi
 - `auto`: Automatically selects the appropriate alignment strategy.
 - `reorder`: Reorders sequences for efficient alignment.
 
-### **Part 2a: Prepare Partitioned Alignments**
+### **Part 2a: Prepare Partitioned Alignments (Use this when you have multiple genes but not the full genome)**
 # Install and run partition finder
 
-1. Define genome regions for partitioned analysis (e.g., coding regions, non-coding regions, or individual genes). This information is available from genbank
-2. Create a partition file (partitions.txt) specifying regions:
-   ```text
+#1. Define genome regions for partitioned analysis (e.g., coding regions, non-coding regions, or individual genes). This information is available from genbank
+# 2. Create a partition file (partitions.txt) specifying regions:
+   ``` text
    # Example partitions file for RAxML. These numbers are just examples and must be replaced by the coordinates in your chosen virus species.
    DNA, region1 = 1-3000
    DNA, region2 = 3001-6000
    DNA, region3 = 6001-9000
-### **Part 2b: Prepare Concatenated Alignment**
+```
+### **Part 2b: Prepare Concatenated Alignment (Use this for full-lenght genomes)**
 1. Concatenated Alignment: Use the full alignment (aligned_genomes.fasta) for the concatenated tree.
 
 ### **Part 3: Build Phylogenetic Trees**
