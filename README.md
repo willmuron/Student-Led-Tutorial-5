@@ -128,9 +128,7 @@ raxmlHPC -m GTRGAMMA -J MR -z RAxML_bootstrap.tree -n consensus
 2. Open the resulting .newick tree files in FigTree:
    - Example file: covid_concatenated_tree.raxml.bestTree.
 3. Customize tree aesthetics:
-   - Root the tree: Select an outgroup or midpoint root.
-   - Adjust branch colors and widths.
-   - Annotate bootstrap values.
+   - Edit tree in: https://itol.embl.de/upload.cgi
 4. Export the edited tree as a publication-ready image:
    - File → Export PDF/PNG.
 
