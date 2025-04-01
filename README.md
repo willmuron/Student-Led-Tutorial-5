@@ -116,12 +116,14 @@ raxmlHPC -T 4 -s aligned_genomes.fasta \
    -# 100
 ```
 - Summarize trees and obtain best tree with support values at each node.
+```
 raxmlHPC -f b \
    -t RAxML_bestTree.tree \
    -z RAxML_bootstrap.tree \
    -m GTRGAMMA \
    -n tree_with_support
-
+```
+```
 raxmlHPC -T 4 \
   -s aligned_genomes.fasta \
   -n concatenated_tree \
