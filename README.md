@@ -59,6 +59,9 @@ We will use publicly available genome sequences of **respiratory viruses** or mi
    mkdir -p raxml_tutorial && cd raxml_tutorial
 2. Place the downloaded viral genome FASTA files in the directory.
   - Fork repository and clone the repository.
+```
+git clone github-url
+```
   - cd into the newly cloned repository, if you gave your forked repo a new name, the command line below must reflect that change.
 
 ```
