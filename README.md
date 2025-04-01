@@ -117,18 +117,7 @@ raxmlHPC -T 4 -s aligned_genomes.fasta \
 ```
 - Summarize trees and obtain best tree with support values at each node.
 ```
-raxmlHPC -f b \
-   -t RAxML_bestTree.tree \
-   -z RAxML_bootstrap.tree \
-   -m GTRGAMMA \
-   -n tree_with_support
-```
-```
-raxmlHPC -T 4 \
-  -s aligned_genomes.fasta \
-  -n concatenated_tree \
-  -m GTRGAMMA \
-  -p 12345
+raxmlHPC -m GTRGAMMA -J MR -z RAxML_bootstrap.tree -n consensus
 ```
 - `model GTR+G`: General Time Reversible model with Gamma distribution.
 - `all`: Automates tree searches and bootstrap replicates.
