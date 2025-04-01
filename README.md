@@ -113,7 +113,7 @@ raxmlHPC -T 4 -s aligned_genomes.fasta \
    -m GTRGAMMA \
    -p 12345 \
    -x 67890 \
-   -# 100
+   -# 50
 ```
 - Summarize trees and obtain best tree with support values at each node.
 ```
