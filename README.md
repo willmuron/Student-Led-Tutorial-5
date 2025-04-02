@@ -68,17 +68,17 @@ git clone github-url
 cd Student-Led-Tutorial-5
 ```
 
-4. Perform multiple sequence alignment using MAFFT:
+3. Perform multiple sequence alignment using MAFFT:
    ```bash
    mafft --auto --reorder influenzagenomes_human.fasta > aligned_genomes.fasta
 - `auto`: Automatically selects the appropriate alignment strategy.
 - `reorder`: Reorders slsequences for efficient alignment.
 
-5. Explore the alignment and discuss any differences with your partner:
+4. Explore the alignment and discuss any differences with your partner:
 ```
 less aligned_genomes.fasta
 ```
-6. Exit the alignment view by typing `q`
+5. Exit the alignment view by typing `q`
 ---
 # OPTIONAL
 ### **Part 2a: Prepare Partitioned Alignments (Use this when you have multiple genes but not the full genome)**
