@@ -127,7 +127,7 @@ raxmlHPC -m GTRGAMMA -J MR -z RAxML_bootstrap.tree -n consensus
 1. Add, commit and push newly generated tree.
 
 ```
-git add filename
+git add RAxML_MajorityRuleConsensusTree.consensus
 git commit "Phylogenetic tree"
 git push
 ```
