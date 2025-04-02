@@ -125,10 +125,9 @@ raxmlHPC -m GTRGAMMA -J MR -z RAxML_bootstrap.tree -n consensus
 
 ### **Part 4: Visualize and Edit Tree Aesthetics**
 1. Add, commit and push newly generated tree.
-2. Open the resulting .newick tree files in FigTree:
+2. Open the resulting .newick tree files in : https://itol.embl.de/upload.cgi
    - Example file: covid_concatenated_tree.raxml.bestTree.
-3. Customize tree aesthetics:
-   - Edit tree in: https://itol.embl.de/upload.cgi
+3. Customize tree aesthetics: 
 4. Export the edited tree as a publication-ready image:
    - File → Export PDF/PNG.
 
