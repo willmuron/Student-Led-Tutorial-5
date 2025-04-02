@@ -125,10 +125,18 @@ raxmlHPC -m GTRGAMMA -J MR -z RAxML_bootstrap.tree -n consensus
 
 ### **Part 4: Visualize and Edit Tree Aesthetics**
 1. Add, commit and push newly generated tree.
-2. Open the resulting .newick tree files in : https://itol.embl.de/upload.cgi
+
+```
+git add filename
+git commit "Phylogenetic tree"
+git push
+
+```
+
+3. Open the resulting .newick tree files in : https://itol.embl.de/upload.cgi
    - Example file: covid_concatenated_tree.raxml.bestTree.
-3. Customize tree aesthetics: 
-4. Export the edited tree as a publication-ready image:
+4. Customize tree aesthetics: 
+5. Export the edited tree as a publication-ready image:
    - File → Export PDF/PNG.
 
 ### **Part 5: Interpret Phylogenetic Trees**
