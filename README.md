@@ -130,7 +130,6 @@ raxmlHPC -m GTRGAMMA -J MR -z RAxML_bootstrap.tree -n consensus
 git add filename
 git commit "Phylogenetic tree"
 git push
-
 ```
 
 3. Open the resulting .newick tree files in : https://itol.embl.de/upload.cgi
